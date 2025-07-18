@@ -1,0 +1,73 @@
+/* Fullscreen black overlay to simulate screen lock */
+#overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 9999;
+}
+
+/* Popup styling */
+#popup {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 20px;
+  max-width: 350px;
+  padding: 25px 20px;
+  box-shadow: 0 0 15px 8px red;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #b22222;
+  z-index: 10000;
+  animation: popupPulse 1.5s infinite alternate;
+}
+
+/* Android logo size */
+.android-logo {
+  width: 80px;
+  margin-bottom: 15px;
+  animation: shake 0.8s infinite;
+}
+
+/* Shake animation */
+@keyframes shake {
+  0% { transform: translate(0, 0) rotate(0deg);}
+  25% { transform: translate(-5px, 0) rotate(-5deg);}
+  50% { transform: translate(5px, 0) rotate(5deg);}
+  75% { transform: translate(-5px, 0) rotate(-5deg);}
+  100% { transform: translate(0, 0) rotate(0deg);}
+}
+
+/* Popup pulse glow */
+@keyframes popupPulse {
+  0% { box-shadow: 0 0 15px 8px red; }
+  100% { box-shadow: 0 0 30px 15px red; }
+}
+
+#popup h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+#popup p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+#callBtn {
+  margin-top: 15px;
+  padding: 12px 25px;
+  font-size: 18px;
+  color: white;
+  background-color: #d32f2f;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px #b22222;
+  transition: background-color 0.3s ease;
+}
+
+#callBtn:hover {
+  background-color: #a71d1d;
+}
